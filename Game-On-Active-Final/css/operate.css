@@ -1,0 +1,342 @@
+.header-section::before {
+  display: none;
+}
+.operate-page-hero-section::before {
+  content: "";
+  background-image: url(../images/operate-page-img/operate-bg-img.png) !important;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100% !important;
+  height: 800px !important;
+  background-repeat: no-repeat;
+  bottom: 0;
+  background-size: cover;
+}
+.operate-page-hero-section::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    89.9deg,
+    rgba(0, 0, 0, 0.87) 0.08%,
+    rgba(0, 0, 0, 0.4) 99.91%
+  ) !important;
+  /* z-index: 78; */
+  z-index: -1;
+  width: 100% !important;
+  height: 800px;
+  top: 0px;
+  bottom: 0;
+}
+.operate-page-hero-section {
+  padding-top: 250px;
+}
+.hero-para {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 57px;
+}
+/*.operate-hero-col-div-left {
+    padding-right: 208px;
+}*/
+/*.operate-hero-col-div-left {
+    padding-right: 208px;
+} */
+.operate-hero-img {
+  width: calc(100% + 120px);
+  margin-left: 80px;
+}
+
+.download-btn {
+  padding: 15px 60px;
+  background-color: var(--white);
+  border-radius: 100px;
+}
+.operate-hero-col-div-left {
+  padding-right: 103px;
+  padding-top: 60px;
+}
+
+.operate-hero-col-div-right {
+  padding-top: 60px;
+}
+
+.operate-customer-access-section {
+  padding: 109px 0 200px 0;
+}
+.customer-para {
+  padding-right: 60px;
+}
+.customer-para,
+.booking-para {
+  opacity: 0.6;
+}
+.booking-para {
+  padding-right: 40px;
+}
+.action-btn {
+  margin-top: 20px;
+}
+
+.operate-booking-approve-section {
+  padding-bottom: 200px;
+}
+.pricing-container {
+  padding: 0px 70px;
+}
+/*.operate-page-pricing-row::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 411px;
+  background: linear-gradient(
+    97.11deg,
+    rgba(255, 255, 255, 0.37) 0%,
+    rgba(255, 255, 255, 0) 103.74%
+  );
+  border-radius: 10px;
+}
+*/
+/*.pricing-operate-content::after {
+  content: "";
+  position: absolute;
+  background-image: url(/images/operate-page-img/tick-icon.png);
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  bottom: -272px;
+  left: 0;
+ 
+}*/
+.pricing-operate-content {
+  background: linear-gradient(
+    97.11deg,
+    rgba(255, 255, 255, 0.37) 0%,
+    rgba(255, 255, 255, 0) 103.74%
+  );
+  border-radius: 10px;
+  padding: 40px;
+}
+.pricing-operate-content::after{
+   content:"";
+   background-image: url(/images/operate-page-img/decor-line.png);
+   position:absolute;
+   width:100%;
+  bottom:-256px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  left: 0;
+  
+
+}
+.pricing-list-content{
+  list-style-type: none;
+}
+.gap{
+  margin-right:12px;
+}
+.pricing-section {
+  padding-bottom: 200px;
+}
+.client-head {
+  opacity: 1;
+}
+.client-card-wrapper {
+  background-color: transparent;
+  padding: 30px;
+}
+
+.client-card-head {
+  opacity: 0.8;
+}
+.client-review-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.client-details {
+  display: flex;
+  flex-direction: column;
+}
+.client-designation {
+  opacity: 0.6;
+}
+
+.border-grad {
+  border: 1px solid var(--flamingo) !important;
+  border-radius: 15px !important;
+
+  /*border-image: linear-gradient(45deg, rgba(249, 89, 36, 1), rgba(255, 255, 255, 0.2)) 1;*/
+}
+.card-header {
+  padding: 0;
+}
+.connect-page-client-section {
+  padding-bottom: 200px;
+}
+.card-wrapper-col {
+  margin: 0 12px;
+}
+.client-card-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 0 0 26px 0;
+}
+
+.client-card-head:before {
+  position: absolute;
+  width: 16px;
+  height: 20px;
+  top: -15px;
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url(/images/connect-img/quotes.svg);
+  left: -15px;
+}
+
+.client-card-head:after {
+  position: absolute;
+  width: 16px;
+  height: 20px;
+  bottom: 15px;
+  right: 15px;
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("/images/connect-img/quotes.svg");
+}
+
+
+
+
+.slick-slider .element {
+  height: 100px;
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 20px;
+}
+.slick-slider .slick-disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+.slick-track {
+  display: flex !important;
+  overflow: hidden!important;
+  
+}
+.slick-slider .element {
+  width: 500px!important;
+  height: 301px!important;
+  background-color: transparent!important;
+  border-radius: none!important;
+  margin:0 20px!important;
+  overflow: hidden!important;
+}
+.slick-list {
+  overflow: hidden!important;
+}
+.slick-arrow{
+  font-size :30px !important;
+  color: rgba(148, 146, 146, 0.6);
+
+}
+.prev , .next{
+  list-style-type: none;
+}
+/*--------------------------------------media query----------------------------------------------------------*/
+
+@media (max-width: 1280px) {
+  .operate-hero-img {
+    margin-left: 0;
+  }
+  .hero-operate-row-div,
+  .customer-access-row,
+  .booking-approve-row {
+    flex-direction: column;
+  }
+  .operate-hero-col-div-left,
+  .customer-col-div-left {
+    width: 100%;
+    text-align: center;
+
+    order: 2;
+  }
+  .operate-hero-col-div-right {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  .customer-col-div-right {
+    justify-content: center !important;
+    order: 1;
+  }
+  .booking-approve-col-div-right {
+    width: 100%;
+    text-align: center;
+  }
+  .action-btn {
+    justify-content: center;
+  }
+  .booking-approve-row {
+    text-align: center;
+  }
+}
+@media (max-width: 1000px) {
+  .pricing-container {
+    padding: 0;
+  }
+  .operate-page-pricing-row {
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .operate-page-pricing-col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+ 
+  .client-card-row-wrapper {
+    flex-direction: column;
+  }
+  .card-wrapper-col {
+    margin-bottom: 20px;
+  }
+  .pricing-operate-content::after {
+    display: none;
+  }
+  .operate-hero-col-div-left {
+    padding-right: 103px;
+    padding-top: 60px;
+    padding: 0;
+  }
+  .operate-page-hero-section {
+    position: static !important;
+  }
+}
+@media (max-width: 768px) {
+  .client-head-div {
+    flex-direction: column;
+    text-align: center;
+  }
+  .customer-para {
+    padding-right: 0;
+  }
+  .card-wrapper-col {
+    margin: 0;
+
+  }
+  .operate-page-hero-section{
+    padding-top: 90px;
+  }
+}
