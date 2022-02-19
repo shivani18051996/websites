@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>chat</title>
+
+</head>
+
+<body>
+    <section class="chat-dashboard-section">
+        <div class="container-fluid dashboard-container">
+            <div class="dashboard-wrapper">
+                <div class="row dashboard-row-wrapper w-100 justify-content-between">
+                    <div class="col-2 navbar-wrapper-col">
+                        <div class="sidebar-div">
+                            <nav id="nav-sidebar">
+                                <div class="logo-title d-flex align-items-center">
+                                    <a href="#">
+                                        <img src="images/logo-img.svg" alt="logo-img" class="logo-img"></a>
+                                    <img src="images/m-logo-img.svg" alt="m-logo-img" class="logo-img-mobile"></a>
+                                </div>
+                                <ul class="list-items">
+                                    <li class="list-content" onclick="openProfile()"><a href="#"
+                                            class="list-style-item list-style-item-hide"><i
+                                                class="bi bi-person side-bar-icon"></i><span
+                                                class="list-item-hide list-item-hide-tab">Profile</span></a></li>
+                                    <li class="list-content"><a href="#" class="list-style-item"><i
+                                                class="bi bi-columns-gap side-bar-icon"></i><span
+                                                class="list-item-hide">Dashboard</span></a></li>
+                                    <li class="list-content"><a href="#" class="list-style-item"><i
+                                                class="bi bi-archive side-bar-icon"></i><span
+                                                class="list-item-hide">Product</span></a></li>
+                                    <li class="list-content"><a href="#" class="list-style-item"><i
+                                                class="bi bi-list-ol side-bar-icon"></i></i><span
+                                                class="list-item-hide">Order</span> <span
+                                                class="order-count text-white fs-8-lh-9">5</span></a></li>
+                                    <li class="list-content list-content-open" onclick="chatProfile()"><a href="#"
+                                            class="list-style-item active"><i class="bi bi-chat side-bar-icon"></i><span
+                                                class="list-item-hide">Chat</span></a></li>
+                                                <li class="list-content list-content-close"><a href="#"
+                                                    class="list-style-item active "><i class="bi bi-chat side-bar-icon"></i><span
+                                                        class="list-item-hide">Chat</span></a></li>
+                                    <li class="list-content"><a href="#" class="list-style-item"><i
+                                                class="bi bi-file-earmark-text side-bar-icon"></i><span
+                                                class="list-item-hide">Document</span></a></li>
+                                    <li><a href="#" class="list-style-item"><i
+                                                class="bi bi-gear side-bar-icon"></i><span
+                                                class="list-item-hide">Setting</span></a></li>
+                                    <li><a href="#" class="list-style-item d-flex align-items-center"><i
+                                                class="material-icons-outlined side-bar-icon log-out-icon">logout</i><span
+                                                class="list-item-hide">Logout</span></a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+
+
+                    </div>
+                    <div class="fab-container">
+                        <a class="fab-buttons level" href="#" tooltip="Create Learning Path">
+                            <i class="bi bi-columns-gap level-item" aria-hidden="true"></i>
+                        </a>
+                        <a class="fab-buttons level" href="#" tooltip="Create Course">
+                            <i class="bi bi-archive level-item" aria-hidden="true"></i>
+                        </a>
+                        <a class="fab-buttons level" href="#" tooltip="Create Module">
+                            <i class="bi bi-list-ol level-item" aria-hidden="true"></i>
+                        </a>
+                        <a class="fab-buttons level" href="#" tooltip="Create Module Component">
+                            <i class="bi bi-chat level-item" aria-hidden="true"></i>
+                        </a>
+                        <a class="fab-buttons level" href="#" tooltip="Create Module Component">
+                            <i class="bi bi-file-earmark-text level-item" aria-hidden="true"></i>
+                        </a>
+                        <a class="fab-buttons level" href="#" tooltip="Create Module Component">
+                            <i class="bi bi-gear level-item" aria-hidden="true"></i>
+                        </a>
+                        <a class="fab-buttons" href="#" tooltip="Admin Options">
+                            <span><span class="fab-rotate level"><i class="fa fa-plus fas-plus-sign"
+                                        aria-hidden="true"></i>
+                                </span></span>
+                        </a>
+                    </div>
+                    <div class="col-10 col-right-content">
+                        <div class="row-header d-flex justify-content-between align-items-center">
+                            <div class="chat-title div-left-content">
+                                <h1 class="chat-head-title text-grey my-0">Chat</h1>
+                            </div>
+                            <div class="div-right-content">
+                                <div class="right-content-wrapper d-flex align-items-center justify-content-between">
+                                    <div class="btn-div d-flex">
+                                        <a href="#" class="text-decoration-none chat-button"> <i
+                                                class="fas fa-plus chat-plus"></i>Chat</a>
+                                    </div>
+                                    <div class="bell-div-icon">
+                                        <img src="images/bell.svg" class="bell-icon">
+                                    </div>
+                                    <div class="profile-text-div d-flex align-items-center">
+                                        <img src="images/chat-profile-img-top.png" class="chat-profile-img">
+                                        <span class="profile-name text-grey fs-14-lh-16">Leslie Alexander</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row chat-container-row">
+                            <div class="col-3 profile-col-data" id="recent-chat-menu">
+                                <div class="settings-tray d-flex align-items-center justify-content-between">
+                                    <div class="setting-div">
+                                        <span class="inbox-text fs-14-lh-16 text-grey">Inbox</span>
+                                        <a href="#" class="notification-text text-decoration-none text-blue">2 new</a>
+                                    </div>
+                                    <div>
+                                        <!-- <i class="fas fa-cog"></i> -->
+                                        <i class="bi bi-gear"></i>
+                                    </div>
+                                </div>
+                                <div class="search-box">
+                                    <div class="input-wrapper position-relative">
+                                        <i class="bi bi-search search-icon position-absolute"></i>
+                                        <!-- <i class="fa fa-search search-icon position-absolute" aria-hidden="true"></i> -->
+                                        <input placeholder="Search..." type="text" class="input-search" id="myInput" onkeyup="myFunction()">
+                                    </div>
+
+                                </div>
+                                <div class="user-search-div-container"  id="myUL">
+                                    <div class="user-search-div">
+                                        <div class="user-data-content" id="user-data-effect">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div>
+                                                    <img src="images/profile-img1.png" alt="profile-img"
+                                                        class="profile-img">
+                                                </div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Jacob
+                                                        Jones</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Marketing
+                                                        Coordinator</span>
+                                                </div>
+                                                <div class="time-div" id="user-white">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content" id="user-white">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content active">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img2.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Leslie
+                                                        Alexander</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                        Designer</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img3.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Eleanor
+                                                        Pena</span>
+                                                    <span class="d-block user-designation fs-8-lh-9 ">Dog
+                                                        Trainer</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img4.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Kathryn
+                                                        Murphy</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Medical
+                                                        Assistant</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img5.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Wade
+                                                        Warren</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                        Designer</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img6.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Marvin
+                                                        McKinney</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Nursing
+                                                        Assistant</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content ">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img1.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Jacob
+                                                        Jones</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Marketing
+                                                        Coordinator</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img2.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Leslie
+                                                        Alexander</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                        Designer</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img3.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Eleanor
+                                                        Pena</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Dog
+                                                        Trainer</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img4.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Kathryn
+                                                        Murphy</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Medical
+                                                        Assistant</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img5.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Wade
+                                                        Warren</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                        Designer</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="user-data-content">
+                                            <div
+                                                class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                <div> <img src="images/profile-img6.png" alt="profile-img"
+                                                        class="profile-img"></div>
+
+                                                <div class="user-data">
+                                                    <span
+                                                        class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Marvin
+                                                        McKinney</span>
+                                                    <span class="d-block user-designation  fs-8-lh-9 ">Nursing
+                                                        Assistant</span>
+                                                </div>
+                                                <div class="time-div">
+                                                    <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-data-content">
+                                                <p class="data-content-text fs-10-lh-12">Lorem ipsum dolor
+                                                    sit amet</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 chat-panel-col">
+                                <div class="chat-panel-display">
+                                    <div class="chat-panel-profile d-flex justify-content-between">
+                                        <div class="chat-panel-div-wrapper d-flex align-items-center">
+                                            <div class="chat-panel-profile-img">
+                                                <img src="images/profile-img2.png" alt="profile-panel-img">
+                                            </div>
+                                            <div class="chat-panel-profile-div">
+                                                <span
+                                                    class="d-block text-light-grey fs-14-lh-16 profile-text-span-chat-panel">Leslie
+                                                    Alexander</span>
+                                                <span
+                                                    class="d-block text-light-grey fs-8-lh-9 profile-designation-chat-panel-span">Web
+                                                    Designer</span>
+                                            </div>
+                                        </div>
+                                        <div class="doted-ellipsis">
+                                            <i class="fas fa-ellipsis-v text-light-grey ellipsis-icon"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="chat-box-tray chat-box-chat-panel-div">
+                                    <div class="chat-box-head-div">
+                                        <h2 class="chat-div-head-date text-light-grey fs-8-lh-9 text-center">August 21
+                                        </h2>
+                                    </div>
+                                    <div class="chat-box-content d-flex chat-box-content-one">
+                                        <div class="chat-box-content-img chat-bubble chat-bubble--first">
+                                            <img src="images/profile-img2.png" alt="chat-box-content-img">
+                                        </div>
+                                        <div class="chat-box-bubble-content-para ">
+                                            <p class="chat-para fs-8-lh-14 text-grey">Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit. Dolor mollis leo
+                                                proin turpis eu hac. Tortor dolor eu at bibendum suspendisse. Feugiat mi
+                                                eu, rhoncus diam consectetur libero morbi pharetra. Id tristique mi eget
+                                                eget tristique orci.</p>
+                                        </div>
+                                    </div>
+                                    <div class="send-chat-time">
+                                        <span class="chat-time-span fs-8-lh-9 text-light-grey">
+                                            10:15 pm
+                                        </span>
+                                    </div>
+
+                                    <div class="chat-box-content chat-box-content-two d-flex">
+                                        <div class="chat-box-bubble-content-para-two ">
+                                            <p class="chat-para-two fs-8-lh-14 text-grey">Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit. Dolor mollis leo
+                                                proin turpis eu hac. Tortor dolor eu at bibendum suspendisse.</p>
+                                        </div>
+                                        <div class="chat-box-content-img chat-bubble chat-bubble--second">
+                                            <img src="images/profile-img6.png" alt="chat-box-content-img">
+                                        </div>
+                                    </div>
+                                    <div class="send-chat-time-two d-flex justify-content-end">
+                                        <span class="chat-time-span fs-8-lh-9 text-light-grey">
+                                            12:15 pm
+                                        </span>
+                                    </div>
+
+                                    <div class="chat-box-tray-two">
+                                        <div class="chat-box-head-div">
+                                            <h2 class="chat-div-head-date text-light-grey fs-8-lh-9 text-center">August
+                                                22
+                                            </h2>
+                                        </div>
+                                        <div class="chat-box-bubble-content-wrapper d-flex ">
+                                            <div class="chat-box-profile-img-two">
+                                                <img src="images/profile-img2.png" alt="chat-profile">
+                                            </div>
+                                            <div class="audio-img-div">
+                                                <img src="images/audio-img.svg" alt="audio-img" class="audio-img">
+                                            </div>
+                                        </div>
+                                        <div class="send-chat-time">
+                                            <span class="chat-time-span fs-8-lh-9 text-light-grey">
+                                                06:00 pm
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-box-tray">
+                                        <input type="text" class="input-text-div fs-8-lh-9 "
+                                            placeholder="Write a message...">
+                                        <div class="message-box-icon position-absolute">
+                                            <i class="fas fa-paperclip msg-box-icon paper-clip-icon"></i>
+                                            <i class="far fa-smile msg-box-icon smile-icon"></i>
+                                            <i class="msg-box-icon paper-plane-icon active"> <svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-send " viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                                                </svg></i>
+                                            <!-- <i class="bi bi-send"></i> -->
+                                            <!-- <i class="far fa-paper-plane msg-box-icon paper-plane-icon active"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 profile-chat-main" id="user-profile">
+                                <div class="profile-information-div text-center">
+                                    <img src="images/profile-img.svg" width="90px" height="90px">
+                                    <div class="profile-content-chat-main d-flex flex-column">
+                                        <h2 class="profile-text-chat-main-head fs-14-lh-17 text-grey">Leslie Alexander
+                                        </h2>
+                                        <span class="profile-text-span-chat-main fs-8-lh-9 text-light-grey">Web
+                                            Designer</span>
+                                    </div>
+                                    <div class="rating-div d-flex align-items-center justify-content-center">
+                                        <img src="images/star-icon.svg" alt="star-rating" class="rating-star-img">
+                                        <span class="rating-point fs-6-lh-7 text-grey">4.7</span>
+                                        <span class="rating-text fs-6-lh-7 text-light-grey">(Rating)</span>
+                                    </div>
+                                </div>
+
+                                <div class="see-more-div d-flex justify-content-between align-items-center">
+                                    <h2 class=" chat-profile-head-title chat-head-title-main text-grey fs-14-lh-17">
+                                        Lorem ipsum</h2>
+                                    <div class="see-all-btn d-flex">
+                                        <a href="#" class="text-decoration-none see-btn text-light-grey fs-10-lh-12">See
+                                            all</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-wrapper-chat-main">
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                            </div>
+
+                                            <div class="profile-card-details profile-card-detail-one">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Acme
+                                                    Co.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Viet
+                                                    Nam</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">04:15
+                                                    am</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Biffco-Enterprises-Ltd.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-two">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Biffco
+                                                    Enterprises Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Greece</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">06:41
+                                                    pm</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Binford-Ltd..svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-three">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Binford
+                                                    Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">South
+                                                    Africa</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">07:40
+                                                    am</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Big-Ltd.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-four">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Big
+                                                    Kahuna
+                                                    Burger Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Palestine,
+                                                    State of</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">01:34
+                                                    pm</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Abstergo-Ltd.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-five">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Abstergo
+                                                    Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Monaco</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">02:34
+                                                    am</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Barone.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-six">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Barone
+                                                    LLC.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Kiribati</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">05:49
+                                                    pm</span>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                            </div>
+
+                                            <div class="profile-card-details profile-card-detail-one">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Acme
+                                                    Co.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Viet
+                                                    Nam</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">04:15
+                                                    am</span>
+                                            </div>
+
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Biffco-Enterprises-Ltd.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-two">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Biffco
+                                                    Enterprises Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Greece</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">06:41
+                                                    pm</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Big-Ltd.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-three">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Binford
+                                                    Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">South
+                                                    Africa</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">07:40
+                                                    am</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-four">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Big
+                                                    Kahuna
+                                                    Burger Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Palestine,
+                                                    State of</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">01:34
+                                                    pm</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-card-chat-div-last d-flex justify-content-between align-items-center">
+                                            <div class="profile-card-wrapper">
+                                                <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                            </div>
+                                            <div class="profile-card-details profile-card-detail-five">
+                                                <span class="profile-card-title d-block text-grey fs-14-lh-17">Abstergo
+                                                    Ltd.</span>
+                                                <span
+                                                    class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Monaco</span>
+                                            </div>
+                                            <div class="profile-card-time-content">
+                                                <span
+                                                    class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">02:34
+                                                    am</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!------------------tablet view----------start---------------------->
+                        <div class="row-tablet-view-chat-container">
+                            <div class="layout-swipper">
+                                <ul class="nav nav-pills mb-3 nav-pills-tab" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active nav-link-my-style" id="pills-home-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab"
+                                            aria-controls="pills-home" aria-selected="true">Chats</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link nav-link-my-style" id="pills-profile-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-profile" type="button"
+                                            role="tab" aria-controls="pills-profile"
+                                            aria-selected="false">Profile</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link nav-link-my-style" id="pills-contact-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
+                                            role="tab" aria-controls="pills-contact"
+                                            aria-selected="false">Contact</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                        aria-labelledby="pills-home-tab">
+                                        <div class="col-6 chat-panel-col chat-panel-col-tab">
+                                            <div class="chat-panel-display">
+                                                <div class="chat-panel-profile d-flex justify-content-between">
+                                                    <div class="chat-panel-div-wrapper d-flex align-items-center">
+                                                        <div class="chat-panel-profile-img">
+                                                            <img src="images/profile-img2.png" alt="profile-panel-img">
+                                                        </div>
+                                                        <div class="chat-panel-profile-div">
+                                                            <span
+                                                                class="d-block text-light-grey fs-14-lh-16 profile-text-span-chat-panel">Leslie
+                                                                Alexander</span>
+                                                            <span
+                                                                class="d-block text-light-grey fs-8-lh-9 profile-designation-chat-panel-span">Web
+                                                                Designer</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="doted-ellipsis">
+                                                        <i class="fas fa-ellipsis-v text-light-grey ellipsis-icon"></i>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="chat-box-tray chat-box-chat-panel-div">
+                                                <div class="chat-box-head-div">
+                                                    <h2
+                                                        class="chat-div-head-date text-light-grey fs-8-lh-9 text-center">
+                                                        August 21
+                                                    </h2>
+                                                </div>
+                                                <div class="chat-box-content d-flex chat-box-content-one">
+                                                    <div class="chat-box-content-img chat-bubble chat-bubble--first">
+                                                        <img src="images/profile-img2.png" alt="chat-box-content-img">
+                                                    </div>
+                                                    <div class="chat-box-bubble-content-para ">
+                                                        <p class="chat-para fs-8-lh-14 text-grey">Lorem ipsum dolor sit
+                                                            amet,
+                                                            consectetur adipiscing elit. Dolor mollis leo
+                                                            proin turpis eu hac. Tortor dolor eu at bibendum
+                                                            suspendisse. Feugiat mi
+                                                            eu, rhoncus diam consectetur libero morbi pharetra. Id
+                                                            tristique mi eget
+                                                            eget tristique orci.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="send-chat-time">
+                                                    <span class="chat-time-span fs-8-lh-9 text-light-grey">
+                                                        10:15 pm
+                                                    </span>
+                                                </div>
+
+                                                <div class="chat-box-content chat-box-content-two d-flex">
+                                                    <div class="chat-box-bubble-content-para-two ">
+                                                        <p class="chat-para-two fs-8-lh-14 text-grey">Lorem ipsum dolor
+                                                            sit amet,
+                                                            consectetur adipiscing elit. Dolor mollis leo
+                                                            proin turpis eu hac. Tortor dolor eu at bibendum
+                                                            suspendisse.</p>
+                                                    </div>
+                                                    <div class="chat-box-content-img chat-bubble chat-bubble--second">
+                                                        <img src="images/profile-img6.png" alt="chat-box-content-img">
+                                                    </div>
+                                                </div>
+                                                <div class="send-chat-time-two d-flex justify-content-end">
+                                                    <span class="chat-time-span fs-8-lh-9 text-light-grey">
+                                                        12:15 pm
+                                                    </span>
+                                                </div>
+
+                                                <div class="chat-box-tray-two">
+                                                    <div class="chat-box-head-div">
+                                                        <h2
+                                                            class="chat-div-head-date text-light-grey fs-8-lh-9 text-center">
+                                                            August
+                                                            22
+                                                        </h2>
+                                                    </div>
+                                                    <div class="chat-box-bubble-content-wrapper d-flex ">
+                                                        <div class="chat-box-profile-img-two">
+                                                            <img src="images/profile-img2.png" alt="chat-profile">
+                                                        </div>
+                                                        <div class="audio-img-div">
+                                                            <img src="images/audio-img.svg" alt="audio-img"
+                                                                class="audio-img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="send-chat-time">
+                                                        <span class="chat-time-span fs-8-lh-9 text-light-grey">
+                                                            06:00 pm
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="chat-box-tray">
+                                                    <input type="text" class="input-text-div fs-8-lh-9 "
+                                                        placeholder="Write a message...">
+                                                    <div class="message-box-icon position-absolute">
+                                                        <i class="fas fa-paperclip msg-box-icon paper-clip-icon"></i>
+                                                        <i class="far fa-smile msg-box-icon smile-icon"></i>
+                                                        <i class="msg-box-icon paper-plane-icon active"> <svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-send "
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                                                            </svg></i>
+                                                        <!-- <i class="bi bi-send"></i> -->
+                                                        <!-- <i class="far fa-paper-plane msg-box-icon paper-plane-icon active"></i> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab">
+                                        <div class="col-3 profile-chat-main-tab">
+                                            <div class="profile-information-div text-center">
+                                                <img src="images/profile-img.svg" width="90px" height="90px">
+                                                <div class="profile-content-chat-main d-flex flex-column">
+                                                    <h2 class="profile-text-chat-main-head fs-14-lh-17 text-grey">Leslie
+                                                        Alexander
+                                                    </h2>
+                                                    <span
+                                                        class="profile-text-span-chat-main fs-8-lh-9 text-light-grey">Web
+                                                        Designer</span>
+                                                </div>
+                                                <div
+                                                    class="rating-div d-flex align-items-center justify-content-center">
+                                                    <img src="images/star-icon.svg" alt="star-rating"
+                                                        class="rating-star-img">
+                                                    <span class="rating-point fs-6-lh-7 text-grey">4.7</span>
+                                                    <span class="rating-text fs-6-lh-7 text-light-grey">(Rating)</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="see-more-div d-flex justify-content-between align-items-center">
+                                                <h2
+                                                    class=" chat-profile-head-title chat-head-title-main text-grey fs-14-lh-17">
+                                                    Lorem ipsum</h2>
+                                                <div class="see-all-btn d-flex">
+                                                    <a href="#"
+                                                        class="text-decoration-none see-btn text-light-grey fs-10-lh-12">See
+                                                        all</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-wrapper-chat-main">
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                                    </div>
+
+                                                    <div class="profile-card-details profile-card-detail-one">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Acme
+                                                            Co.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Viet
+                                                            Nam</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">04:15
+                                                            am</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Biffco-Enterprises-Ltd.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-two">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Biffco
+                                                            Enterprises Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Greece</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">06:41
+                                                            pm</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Binford-Ltd..svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-three">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Binford
+                                                            Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">South
+                                                            Africa</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">07:40
+                                                            am</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Big-Ltd.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-four">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Big
+                                                            Kahuna Burger Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Palestine,
+                                                            State of</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">01:34
+                                                            pm</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Abstergo-Ltd.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-five">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Abstergo
+                                                            Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Monaco</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">02:34
+                                                            am</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Barone.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-six">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Barone
+                                                            LLC.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Kiribati</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">05:49
+                                                            pm</span>
+                                                    </div>
+                                                </div>
+
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                                    </div>
+
+                                                    <div class="profile-card-details profile-card-detail-one">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Acme
+                                                            Co.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Viet
+                                                            Nam</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">04:15
+                                                            am</span>
+                                                    </div>
+
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Biffco-Enterprises-Ltd.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-two">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Biffco
+                                                            Enterprises Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Greece</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">06:41
+                                                            pm</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Big-Ltd.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-three">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Binford
+                                                            Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">South
+                                                            Africa</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">07:40
+                                                            am</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-four">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Big
+                                                            Kahuna Burger Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Palestine,
+                                                            State of</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">01:34
+                                                            pm</span>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="profile-card-chat-div-last d-flex justify-content-between align-items-center">
+                                                    <div class="profile-card-wrapper">
+                                                        <img src="images/Acme-Co.svg" alt="Acme-Co">
+                                                    </div>
+                                                    <div class="profile-card-details profile-card-detail-five">
+                                                        <span
+                                                            class="profile-card-title d-block text-grey fs-14-lh-17">Abstergo
+                                                            Ltd.</span>
+                                                        <span
+                                                            class="profile-card-para-text d-block text-light-grey fs-8-lh-9">Monaco</span>
+                                                    </div>
+                                                    <div class="profile-card-time-content">
+                                                        <span
+                                                            class="profile-card-time-text-span text-grey fs-10-lh-12 text-grey">02:34
+                                                            am</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">
+                                        <div class="col-3 profile-col-data profile-data-data-tab">
+                                            <div
+                                                class="settings-tray d-flex align-items-center justify-content-between">
+                                                <div class="setting-div">
+                                                    <span class="inbox-text fs-14-lh-16 text-grey">Inbox</span>
+                                                    <a href="#"
+                                                        class="notification-text text-decoration-none text-blue">2
+                                                        new</a>
+                                                </div>
+                                                <div>
+                                                    <!-- <i class="fas fa-cog"></i> -->
+                                                    <i class="bi bi-gear"></i>
+                                                </div>
+                                            </div>
+                                            <div class="search-box">
+                                                <div class="input-wrapper position-relative">
+                                                    <i class="bi bi-search search-icon position-absolute"></i>
+                                                    <!-- <i class="fa fa-search search-icon position-absolute" aria-hidden="true"></i> -->
+                                                    <input placeholder="Search..." type="text" class="input-search ">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="user-search-div">
+                                                <div class="user-data-content" id="user-data-effect">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div>
+                                                            <img src="images/profile-img1.png" alt="profile-img"
+                                                                class="profile-img">
+                                                        </div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Jacob
+                                                                Jones</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Marketing
+                                                                Coordinator</span>
+                                                        </div>
+                                                        <div class="time-div" id="user-white">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content" id="user-white">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content active">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between ">
+                                                        <div> <img src="images/profile-img2.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Leslie
+                                                                Alexander</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                                Designer</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img3.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Eleanor
+                                                                Pena</span>
+                                                            <span class="d-block user-designation fs-8-lh-9 ">Dog
+                                                                Trainer</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img4.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Kathryn
+                                                                Murphy</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Medical
+                                                                Assistant</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img5.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Wade
+                                                                Warren</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                                Designer</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img6.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Marvin
+                                                                McKinney</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Nursing
+                                                                Assistant</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content ">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img1.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Jacob
+                                                                Jones</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Marketing
+                                                                Coordinator</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img2.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Leslie
+                                                                Alexander</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                                Designer</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img3.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Eleanor
+                                                                Pena</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Dog
+                                                                Trainer</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img4.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Kathryn
+                                                                Murphy</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Medical
+                                                                Assistant</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img5.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Wade
+                                                                Warren</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Web
+                                                                Designer</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text  fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="user-data-content">
+                                                    <div
+                                                        class="user-data-content-col d-flex align-items-center justify-content-between">
+                                                        <div> <img src="images/profile-img6.png" alt="profile-img"
+                                                                class="profile-img"></div>
+
+                                                        <div class="user-data">
+                                                            <span
+                                                                class="d-block user-name  fs-14-lh-16 font-family-gilroy-500 ">Marvin
+                                                                McKinney</span>
+                                                            <span class="d-block user-designation  fs-8-lh-9 ">Nursing
+                                                                Assistant</span>
+                                                        </div>
+                                                        <div class="time-div">
+                                                            <span class="time-span-text fs-8-lh-9 ">5m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-data-content">
+                                                        <p class="data-content-text fs-10-lh-12">Lorem ipsum dolor
+                                                            sit amet</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+<script>
+    function openProfile() {
+        document.getElementById("user-profile").style.setProperty('display', 'block', 'important');
+        document.getElementById("user-profile").style.marginRight = "10px";
+        document.getElementById("recent-chat-menu").style.setProperty('display', 'none', 'important');
+
+    }
+
+    function chatProfile() {
+        document.getElementById("user-profile").style.setProperty('display', 'none', 'important');
+        document.getElementById("recent-chat-menu").style.display = "block";
+
+    }
+
+    const body = document.querySelector("body");
+    const fab_nav = document.querySelector(".fab-container");
+    const fab_rotate = document.querySelector(".fab-rotate");
+    const fab_icon = document.querySelector(".fab-icon");
+
+    if (fab_nav) {
+        fab_nav.addEventListener("click", function () {
+            fab_nav.classList.toggle("fab-opened");
+        });
+
+        body.addEventListener("click", function (e) {
+            if (e.target != fab_nav && e.target != fab_rotate && e.target != fab_icon) {
+                fab_nav.classList.remove("fab-opened")
+            }
+        });
+    }
+
+
+    function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("user-data-content");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByClassName("user-data-content-col")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+    $(document).ready(function() {
+$(".user-data-content").click(function () {
+    $(this).addClass("active");
+    $(".user-data-content").not(this).removeClass("active");
+});
+
+});
+$(document).ready(function() {
+$(".list-style-item").click(function () {
+    $(this).addClass("active");
+    $(".list-style-item").not(this).removeClass("active");
+});
+
+});
+
+
+
+
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"></script>
+
+</html>
